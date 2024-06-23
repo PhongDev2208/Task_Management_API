@@ -72,7 +72,7 @@ module.exports.detail = async (req, res) => {
   }
 };
 
-// [GET] /api/v1/tasks/change-status/:id
+// [PATCH] /api/v1/tasks/change-status/:id
 module.exports.changeStatus = async (req, res) => {
   try {
     const id = req.params.id;
@@ -101,7 +101,7 @@ module.exports.changeStatus = async (req, res) => {
   }
 };
 
-// [GET] /api/v1/tasks/change-multi
+// [PATCH] /api/v1/tasks/change-multi
 module.exports.changeMulti = async (req, res) => {
   try {
     const { ids, key, value } = req.body;
@@ -155,7 +155,8 @@ module.exports.changeMulti = async (req, res) => {
     });
   }
 };
-// [GET] /api/v1/tasks/create
+
+// [POST] /api/v1/tasks/create
 module.exports.create = async (req, res) => {
   try {
     req.body.createBy = res.locals.user.id;
@@ -177,7 +178,7 @@ module.exports.create = async (req, res) => {
   }
 };
 
-// [GET] /api/v1/tasks/edit/:id
+// [PATCH] /api/v1/tasks/edit/:id
 module.exports.edit = async (req, res) => {
   try {
     const id = req.params.id;
@@ -203,7 +204,7 @@ module.exports.edit = async (req, res) => {
   }
 };
 
-// [GET] /api/v1/tasks/delete/:id
+// [DELETE] /api/v1/tasks/delete/:id
 module.exports.delete = async (req, res) => {
   try {
     const id = req.params.id;
